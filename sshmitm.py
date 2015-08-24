@@ -4,6 +4,9 @@ Use for examples such as SSH MITM attack and TCP Hijacking
 
 Adding the 'topos' dict with a key/value pair to generate our newly defined
 topology enables one to pass in '--topo=mytopo' from the command line.
+
+author: Sean Choi
+email: yo2seol@stanford.edu
 """
 
 from mininet.net import Mininet
