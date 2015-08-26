@@ -97,6 +97,3 @@ def main():
 if __name__ == '__main__':
     setLogLevel( 'info' )
     main()
-
-
-#topos = { 'attacktopo': ( lambda: AttackTopo() ) }

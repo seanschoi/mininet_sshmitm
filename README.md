@@ -32,7 +32,7 @@ The folder contains 4 files, `etter_filter_ssh, etter_filter_ssh_co, README.md, 
 
 ### Run the mininet CLI 
 
-Start the mininet topology as defined in `sshmitm.py` by running `sudo python sshmitm.py`. The topology contains 3 hosts attached to a single switch with the following definitions.
+Start the mininet topology as defined in `sshmitm.py` by running `./run_mininet.sh` script or running `sudo python sshmitm.py`. The topology contains 3 hosts attached to a single switch with the following definitions.
 ```
 host_name ip  mac_address
 h1  192.168.0.3 00:00:00:00:01
@@ -61,6 +61,10 @@ echo 1 > /proc/sys/net/ipv4/ip_forward, cat /proc/sys/net/ipv4/ip_forward
 This enables linux kernel IP forwarding, so that it can forward packets received from a host to another host.
 
 Run ettercap using the following command
+```
+./run_ettercap.sh
+```
+or which basically runs
 ```
 ettercap -G --filter etter_filter_ssh_co
 ```
