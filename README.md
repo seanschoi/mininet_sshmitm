@@ -28,7 +28,7 @@ You would first need to clone this repository and go into the folder by running
 git clone https://github.com/yo2seol/mininet_sshmitm.git
 cd mininet_sshmitm
 ```
-The folder contains 4 files, `etter_filter_ssh, etter_filter_ssh_co, README.md, sshmitm.py`. `etter_filter_ssh` is a etterfilter file defining the custom operations for packets received in the attacking host. `sshmitm.py` is the main mininet topology and configuration file.
+The folder contains 6 files, `etter_filter_ssh, etter_filter_ssh_co, README.md, sshmitm.py, run_mininet.sh, run_ettercap.sh`. `etter_filter_ssh` is a etterfilter file defining the custom operations for packets received in the attacking host. `sshmitm.py` is the main mininet topology and configuration file. Others are scripts to run the respective services.
 
 ### Run the mininet CLI 
 
