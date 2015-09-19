@@ -1,17 +1,19 @@
 # SSH MITM Attack Demo using Mininet
 
 ## Introduction
-In this demo, we are going to show you how a malicious attacker can eavesdrop the traffic between a SSH client and a SSH server via ARP Spoofing to become the Man in the middle host.
+In this demo, we are going to demonstrate how a malicious attacker can eavesdrop on the traffic between a SSH client and a SSH server via a method called ARP Spoofing to become the Man In The Middle host.
 
 ## Getting Started
 
+This example requires two critical pieces of software called Mininet and Ettercap. We will describe how you can install these softwares below.
+
 ### Mininet Installation
 
-This example requires Mininet installation. Mininet is a software based network emulator. It allows the users to run a collection of end-hosts, switches, routers, and links on a single Linux kernel. You can either install Mininet on your computer or run this example through a VM image which is provided in the Mininet website. More detailed installation instructions and more information about Mininet can be found in http://mininet.org/download/
+First of all, we will need to install Mininet. Mininet is a software based network emulator. It allows the users to run a collection of end-hosts, switches, routers, and links on a single Linux kernel. You can either install Mininet on your computer or run this example through a VM image which is provided in the Mininet website. More detailed installation instructions and more information about Mininet can be found in http://mininet.org/download/
 
 ### Ettercap Installation
 
-Ettercap is a comprehensive suite for man in the middle attacks. It features sniffing of live connections, content filtering on the fly and many other interesting tricks. It supports active and passive dissection of many protocols and includes many features for network and host analysis. We recommend using the Mininet VM image, as it is based on Ubuntu 14.04, making ettercap installations easier as well.
+Secondly, we will need to install Ettercap. Ettercap is a comprehensive suite to easily perform various network based attacks such as ARP spoofing. It features sniffing of live connections, content filtering on the fly and many other interesting tricks. It supports active and passive dissection of many protocols and includes many features for network and host analysis. We recommend using the Mininet VM image, as it is based on Ubuntu 14.04, making ettercap installations easier as well.
 
 #### Ubuntu 14.04 Installation (Mininet VM Image)
 Simply run `sudo apt-get install ettercap-graphical`
