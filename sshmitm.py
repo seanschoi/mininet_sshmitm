@@ -9,6 +9,7 @@ author: Sean Choi
 email: yo2seol@stanford.edu
 """
 
+import os
 from mininet.net import Mininet
 from mininet.node import Node, Controller, RemoteController
 from mininet.log import setLogLevel, info
@@ -16,6 +17,10 @@ from mininet.cli import CLI
 from mininet.topo import Topo
 from mininet.util import quietRun
 from mininet.moduledeps import pathCheck
+
+CURR_PATH = os.getcwd()
+DECODED_LOG_FILE_PATH = CURR_PATH +  "/decoded.log"
+LOG_FILE_PATH= CURR_PATH + "/logfile.log"
 
 class LinuxRouter( Node ):
     "A Node with IP forwarding enabled."
@@ -72,19 +77,25 @@ def stop_sshd():
           quietRun( "pkill -9 -f Banner" ), '\n' )
 
 def create_attack_log(host):
-    host.cmd("chmod 666 /home/mininet/sshmitm/decoded.log>>!#:2")
-    host.cmd("chmod 666 /home/mininet/sshmitm/logfile.log>>!#:2")
+    host.cmd("chmod 666 %s>>!#:2" % DECODED_LOG_FILE_PATH)
+    host.cmd("chmod 666 %s>>!#:2" % LOG_FILE_PATH)
 
 def delete_attack_log(host):
-    host.cmd("rm /home/mininet/sshmitm/decoded.log")
-    host.cmd("rm /home/mininet/sshmitm/logfile.log")
+    host.cmd("rm %s" % DECODED_LOG_FILE_PATH)
+    host.cmd("rm %s" % LOG_FILE_PATH)
 
 def main():
     topo = AttackTopo()
     info( '*** Creating network\n' )
     net = Mininet(topo=topo)
     net.start()
-    print net.items()
+
+    # Print the elements of the network
+    for item in net.items():
+        print item
+
+    print "Encoded log file at %s" % LOG_FILE_PATH 
+    print "Decoded log file at %s" % DECODED_LOG_FILE_PATH 
     h1, h2, attacker, s1 = net.get('h1', 'h2', 'h3', 's1')
     # Start a ssh server on host 2
     start_sshd(h2)

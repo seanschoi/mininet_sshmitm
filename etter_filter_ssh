@@ -11,7 +11,7 @@ if (ip.proto == TCP) {
                 } 
             } 
         } 
-        log(DECODED.data, "/home/mininet/sshmitm/decoded.log");
-        log(DATA.data, "/home/mininet/sshmitm/logfile.log");
+        log(DECODED.data, "./decoded.log");
+        log(DATA.data, "./logfile.log");
     } 
 }
