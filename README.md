@@ -82,7 +82,7 @@ This part will initialize the sniffing as well as arp spoofing. More about ARP s
 4. `Hosts` -> `Host List` to view the hosts. You will see `h1, h2` as defined by their IP addresses.
 5. Add `192.168.0.3` to target 1 and `192.168.0.4` to target 2.
 6. Check that the targets are assigned correctly by going to  `Targets` -> `Current Targets`
-7. Enable ARP Spoofing as follows. `Mitm` -> `ARP Spoofing` -> Check `Sniff Remote Connections` -> Click `Ok`.
+7. Enable ARP Spoofing as follows. `Mitm` -> `Arp poisoning` -> Check `Sniff Remote Connections` -> Click `Ok`.
   Check the log to see that GROUP assignments are similar to your targets.
 8. `Start` -> `Start Sniffing`
 
