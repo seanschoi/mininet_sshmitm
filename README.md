@@ -38,6 +38,24 @@ redir_command_on = "iptables -t nat -A PREROUTING -i %iface -p tcp --dport %port
 redir_command_off = "iptables -t nat -D PREROUTING -i %iface -p tcp --dport %port -j REDIRECT --to-port %rport"
 ```
 
+### Setting up SSH1 on Mininet VM
+Since SSH version 2 is much moree secure and harder to sniff, we will use ssh version for this example. In order to do so, you will need to change some configurations in the Mininet VM.
+
+First of all, make sure Protocol accepts both version 1,2 in `/etc/ssh/sshd_config`. It should say
+```
+Protocol 2,1
+```
+We also need to add the host keys for version 1. First generate the host key as follows
+```
+ssh-keygen -t rsa1 -f /etc/ssh/ssh_host_key -N ""
+```
+and add the following line into `/etc/ssh/sshd_config`
+```
+HostKey /etc/ssh/ssh_host_key
+```
+Restart ssh by running `service ssh restart` and you have allowed SSH1 clients to connect.
+Make sure you revert these options if you are concerned about the security of your own machine.
+
 ## Running the example
 
 ### Clone the repository
