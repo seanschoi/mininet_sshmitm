@@ -21,7 +21,7 @@ Simply run `sudo apt-get install ettercap-graphical`
 #### Others
 Refer to https://github.com/Ettercap/ettercap for detailed instructions on building and installing ettercap
 
-### Change the conf
+#### Change the conf
 Under /etc/ettercap/etter.conf make the following changes
 
 From
